@@ -3,7 +3,6 @@ package main;
 public class DebitCard {
 
     private boolean valid = true;
-    private boolean inUse = false;
 
     private final Account account;
 

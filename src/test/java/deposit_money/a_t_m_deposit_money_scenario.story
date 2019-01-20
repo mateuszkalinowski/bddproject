@@ -1,6 +1,6 @@
 Narrative: Jako właściciel konta chce wypłacić pieniądze z bankomatu
 
-Scenario: W bankomacie jest wystarczająca ilość miejsca
+Scenario: Wpłata pieniędzy do bankomatu
 Given stan konta to <account_balance>
 When karta jest wazna
 When bankomat ma miejsce na <atm_capacity>
