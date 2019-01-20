@@ -14,7 +14,8 @@ Examples:
 |account_balance|atm_available|request|result|atmAvailableAfterTransaction|newBalance|
 |100            |200          |20     |20    |180                         |80        |
 |100            |200          |10     |10    |190                         |90        |
-
+|100            |200          |150    |0     |200                         |100       |
+|100            |50           |80     |0     |50                          |100       |
 
 
 

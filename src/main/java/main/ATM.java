@@ -36,7 +36,7 @@ public class ATM {
      * @return Ilość pieniędzy jaką udało się wpłacić
      */
     public int depositMoney(DebitCard debitCard, int amount) {
-        if( !debitCard.isValid() && money + amount <= capacity) {
+        if( !debitCard.isValid() || money + amount > capacity) {
             return 0;
         }
 

@@ -1,4 +1,4 @@
-package deposit_money.success;
+package withdraw_money;
 
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -10,7 +10,7 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 
 import java.util.List;
 
-public class ATMDepositMoneyScenario extends JUnitStory {
+public class ATMWithdrawMoneyScenario extends JUnitStory {
 
     @Override
     public Configuration configuration() {
@@ -21,7 +21,7 @@ public class ATMDepositMoneyScenario extends JUnitStory {
 
     @Override
     public List<CandidateSteps> candidateSteps() {
-        return new InstanceStepsFactory(configuration(), new ATMDepositMoneyScenarioSteps()).createCandidateSteps();
+        return new InstanceStepsFactory(configuration(), new ATMWithdrawMoneyScenarioSteps()).createCandidateSteps();
     }
 
 //

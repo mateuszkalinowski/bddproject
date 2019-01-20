@@ -1,4 +1,4 @@
-package withdraw_money.success;
+package deposit_money;
 
 
 import main.ATM;
@@ -10,10 +10,9 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
-public class ATMWithdrawMoneyScenarioSteps {
+public class ATMDepositMoneyScenarioSteps {
 
     private ATM atm;
     private Account account;
@@ -27,21 +26,21 @@ public class ATMWithdrawMoneyScenarioSteps {
     }
 
     @When("karta jest wazna")
-    public void createDebitCard() {
+    public void createCreditCard() {
         debitCard = new DebitCard(account);
     }
 
-    @When("bankomat ma dostępne <atm_available>")
-    public void createATM(@Named("atm_available") int money) {
-        atm = new ATM(money,money);
+    @When("bankomat ma miejsce na <atm_capacity>")
+    public void createATM(@Named("atm_capacity") int capacity) {
+        atm = new ATM(0,capacity);
     }
 
-    @When("wlasciciel konta chce wyplacic <request>")
+    @When("właściciel konta chce wpłacić <request>")
     public void withdrawMoney(@Named("request") int amount) {
-        money = atm.withdrawMoney(debitCard, amount);
+        money = atm.depositMoney(debitCard, amount);
     }
 
-    @Then("bankomat powinien wypłacić <result>")
+    @Then("bankomat powinien przyjac <result>")
     public void checkMoney(@Named("result") int amount) {
         assertThat(money, is(amount));
     }
