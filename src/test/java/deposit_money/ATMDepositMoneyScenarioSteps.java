@@ -11,6 +11,7 @@ import org.jbehave.core.annotations.When;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class ATMDepositMoneyScenarioSteps {
 
@@ -25,9 +26,10 @@ public class ATMDepositMoneyScenarioSteps {
         account = new Account(balance);
     }
 
-    @When("karta jest wazna")
-    public void createCreditCard() {
-        debitCard = new DebitCard(account);
+
+    @Given("karta z pinem <card_pin>")
+    public void createDebitCard(@Named("card_pin") int card_pin) {
+        debitCard = new DebitCard(account,card_pin);
     }
 
     @When("bankomat ma miejsce na <atm_capacity>")

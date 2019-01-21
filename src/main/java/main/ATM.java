@@ -17,8 +17,8 @@ public class ATM {
      * @param amount Ilość pieniędzy do wypłaty
      * @return Ilość pieniędzy jaką udało się wypłacić
      */
-    public int withdrawMoney(DebitCard debitCard, int amount) {
-        if (!debitCard.isValid() || amount > money) {
+    public int withdrawMoney(DebitCard debitCard, int amount, int pin) {
+        if (amount > money || !debitCard.checkPin(pin)) {
             return 0;
         }
 
@@ -36,7 +36,7 @@ public class ATM {
      * @return Ilość pieniędzy jaką udało się wpłacić
      */
     public int depositMoney(DebitCard debitCard, int amount) {
-        if( !debitCard.isValid() || money + amount > capacity) {
+        if( money + amount > capacity) {
             return 0;
         }
 
