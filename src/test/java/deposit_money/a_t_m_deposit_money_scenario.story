@@ -1,4 +1,4 @@
-Narrative: Jako właściciel konta chce wypłacić pieniądze z bankomatu
+Narrative: Jako właściciel konta chce wpłacić pieniądze na moje konto
 
 Scenario: Wpłata pieniędzy do bankomatu
 Given stan konta to <account_balance>

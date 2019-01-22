@@ -23,4 +23,19 @@ public class DebitCard {
     public Account getAccount() {
         return account;
     }
+
+    public boolean changePin(int oldPin, int newPin) {
+        if(checkPin(oldPin)) {
+            if(String.valueOf(newPin).length() >=4 && String.valueOf(newPin).length() <=6) {
+                pin = newPin;
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public int getPin() {
+        return pin;
+    }
 }
